@@ -3,11 +3,12 @@ import React from 'react';
 	Button, 
 	Form, 
 	Grid, 
-	Header, 
+	Header,
 	Message, 
 	Segment 
 } from 'semantic-ui-react';
 import LoginIcon from '../LoginIcon/LoginIcon';
+import LoginNavbar from "../LoginNavbar/LoginNavbar";
 
 import '../../App.css';
 
@@ -23,11 +24,12 @@ const LoginForm = () => (
 		}
 		`}</style>
 
+		<LoginNavbar />
 		<Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
 			<Grid.Column style={{ maxWidth: 450 }}>
 				<Header as='h2' color='teal' textAlign='center'>
 				<LoginIcon />
-				<p className="login-form-header">Log-in to your account</p>
+				<p className="login-form-header">Login to your account</p>
 				</Header>
 				<Form size='large'>
 					<Segment stacked>

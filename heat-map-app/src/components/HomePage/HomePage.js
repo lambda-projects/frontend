@@ -85,7 +85,7 @@ const Paragraph = () => (
   </p>
 )
 
-export default class StickyLayout extends Component {
+export default class HomePage extends Component {
   state = {
     menuFixed: false,
     overlayFixed: false,

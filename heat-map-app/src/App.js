@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Container } from 'semantic-ui-react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import StickyLayout from "./components/StickyLayout/StickyLayout";
+import { Route } from 'react-router-dom';
+
 import LoginForm from "./components/LoginForm/LoginForm";
+import HomePage from "./components/HomePage/HomePage";
 
 import './App.css';
 
@@ -10,8 +11,8 @@ class App extends Component {
   render() {
     return (
       <Container className="App">
-        <LoginForm />
-        <StickyLayout />
+        <Route exact path="/" component={LoginForm} />
+        <Route path="/home" component={HomePage} />
       </Container>
     );
   }

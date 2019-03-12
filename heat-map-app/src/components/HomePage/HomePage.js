@@ -56,8 +56,6 @@ const fixedOverlayMenuStyle = {
   left: '800px',
 }
 
-// const src1 = "https://cdn-images-1.medium.com/max/1200/0*a_4llBIWbEeO9ML5.png";
-
 const LeftImage = () => (
   <Image
     floated='left'
@@ -154,7 +152,6 @@ export default class HomePage extends Component {
             lat={this.state.data.latitude}
             lng={this.state.data.longitude} 
           />
-          {/* <Image src={src1} size="massive" centered /> */}
         </Container>
 
         {/* Attaching the top menu is a simple operation, we only switch `fixed` prop and add another style if it has

@@ -16,7 +16,9 @@ import {
   Sidebar,
   Visibility,
 } from 'semantic-ui-react';
+
 import HeatMap from "../HeatMap/HeatMap";
+import VectorLayers from "../VectorLayers/VectorLayers";
 
 import '../../App.css';
 
@@ -222,20 +224,23 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-class Alternate extends Component {
+class Home extends Component {
     state = {
         data: {}
       }
 
     componentDidMount() {
-        console.log("CDM running", this.state.data);
+        console.log("CDM running", this.state.data.latitude);
     
         axios
         .get('https://dbase.wtf/api/gundata/478855')
         .then(res => {
           // console.log(res);
-          this.setState({ data: res.data });
-          console.log(this.state.data);
+          this.setState({ 
+              data: res.data,
+              latlng: [res.data.latitude, res.data.longitude]
+            });
+          console.log(this.state.data.latitude, this.state.data.longitude);
         })
         .catch(err => {
           // console.log(err);
@@ -251,17 +256,25 @@ class Alternate extends Component {
                     <Grid.Row>
                     <Grid.Column width={16}>
                         <Header as='h3' style={{ fontSize: '4em' }}>
-                        Gun Violence Heat Map: State-level
+                            Gun Violence Heat Map: State-level
                         </Header>
-                        <HeatMap />
-                        <Header as='h3' style={{ fontSize: '4em' }}>
-                        Gun Violence Heat Map: County-level
-                        </Header>
+                        {this.state.data ? 
                         <HeatMap 
                             data={this.state.data} 
-                            lat={this.state.data.latitude}
-                            lng={this.state.data.longitude} 
-                        />
+                            latlng={this.state.latlng}
+                        /> : null}
+                        <Header as='h3' style={{ fontSize: '4em' }}>
+                            Gun Violence Heat Map: County-level
+                        </Header>
+                        {this.state.data ? 
+                        <HeatMap 
+                            data={this.state.data} 
+                            latlng={this.state.latlng}
+                        /> : null}
+                        <Header as='h3' style={{ fontSize: '4em' }}>
+                            Vector Layers Example
+                        </Header>
+                        <VectorLayers />
                         {/* <p style={{ fontSize: '1.33em' }}>
                         We can give your company superpowers to do things that they never thought possible.
                         Let us delight your customers and empower your needs... through pure data analytics.
@@ -370,4 +383,4 @@ class Alternate extends Component {
   
 }
 
-export default Alternate;
+export default Home;

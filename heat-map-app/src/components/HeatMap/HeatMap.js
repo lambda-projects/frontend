@@ -15,11 +15,12 @@ export default class HeatMap extends Component {
   }
 
   render() {
- 
-    const position = [this.state.lat, this.state.lng];
+    const position = this.props.latlng;
     
-    return (
-      <Map className="heatmap" center={position} zoom={this.state.zoom}>
+    if (position) {
+      console.log(position, [this.props.lat, this.props.lng]);
+      return (
+        <Map className="heatmap" center={position} zoom={this.state.zoom}>
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -29,7 +30,12 @@ export default class HeatMap extends Component {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-      </Map>
+      </Map> 
     );
-  }
+    } else {
+      return (
+        <h1>Loading...</h1>
+      )
+    }
+  } 
 }

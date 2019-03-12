@@ -3,8 +3,7 @@ import { Container } from 'semantic-ui-react';
 import { Route } from 'react-router-dom';
 
 import LoginForm from "./components/LoginForm/LoginForm";
-import HomePage from "./components/HomePage/HomePage";
-import Alternate from "./components/Alternate/Alternate";
+import Home from "./components/Home/Home";
 
 import './App.css';
 
@@ -12,9 +11,8 @@ class App extends Component {
   render() {
     return (
       <Container className="App">
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/home" component={Home} />
         <Route path="/login" component={LoginForm} />
-        <Route path="/alternate" component={Alternate} />
       </Container>
     );
   }

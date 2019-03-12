@@ -18,7 +18,6 @@ import {
 } from 'semantic-ui-react';
 
 import HeatMap from "../HeatMap/HeatMap";
-import VectorLayers from "../VectorLayers/VectorLayers";
 
 import '../../App.css';
 

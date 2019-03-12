@@ -4,6 +4,10 @@ html {
   font-size: 62.5%;
 }
 
+p {
+  font-size: 1.8rem;
+}
+
 .App {
   text-align: center;
   font-size: 1.8rem;

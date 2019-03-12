@@ -1,5 +1,5 @@
-import _ from 'lodash'
-import React, { Component } from 'react'
+import _ from 'lodash';
+import React, { Component } from 'react';
 import {
   Container,
   Divider,
@@ -12,7 +12,9 @@ import {
   Menu,
   Segment,
   Visibility,
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
+
+import '../../App.css';
 
 const menuStyle = {
   border: 'none',
@@ -51,6 +53,8 @@ const fixedOverlayMenuStyle = {
   ...overlayMenuStyle,
   left: '800px',
 }
+
+const src1 = "https://cdn-images-1.medium.com/max/1200/0*a_4llBIWbEeO9ML5.png";
 
 const LeftImage = () => (
   <Image
@@ -126,6 +130,7 @@ export default class HomePage extends Component {
           <p>
             Our app serves to educate our users on gun violence in America by improving awareness through dynamic data visualizations.
           </p>
+          <Image src={src1} size="massive" centered />
         </Container>
 
         {/* Attaching the top menu is a simple operation, we only switch `fixed` prop and add another style if it has

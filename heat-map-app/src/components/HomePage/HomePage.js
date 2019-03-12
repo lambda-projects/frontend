@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import axios from 'axios';
 import React, { Component } from 'react';
 import {
   Container,
@@ -13,6 +14,7 @@ import {
   Segment,
   Visibility,
 } from 'semantic-ui-react';
+import HeatMap from "../HeatMap/HeatMap";
 
 import '../../App.css';
 
@@ -93,6 +95,23 @@ export default class HomePage extends Component {
   state = {
     menuFixed: false,
     overlayFixed: false,
+    data: {key:"hello"}
+  }
+
+  componentDidMount() {
+    console.log("CDM running", this.state.data);
+
+    axios
+    .get('https://dbase.wtf/api/gundata/478855')
+    .then(res => {
+      // console.log(res);
+      this.setState({ data: res.data });
+      console.log(this.state.data);
+    })
+    .catch(err => {
+      // console.log(err);
+      this.setState({ error: err });
+    });
   }
 
   handleOverlayRef = (c) => {
@@ -130,7 +149,12 @@ export default class HomePage extends Component {
           <p>
             Our app serves to educate our users on gun violence in America by improving awareness through dynamic data visualizations.
           </p>
-          <Image src={src1} size="massive" centered />
+          <HeatMap 
+            data={this.state.data} 
+            lat={this.state.data.latitude}
+            lng={this.state.data.longitude} 
+          />
+          {/* <Image src={src1} size="massive" centered /> */}
         </Container>
 
         {/* Attaching the top menu is a simple operation, we only switch `fixed` prop and add another style if it has

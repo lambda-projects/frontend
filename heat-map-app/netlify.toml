@@ -1,0 +1,4 @@
+[build]
+base = "heat-map-app/"
+publish = "heat-map-app/build/"
+command = "yarn build"

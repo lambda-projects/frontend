@@ -56,7 +56,7 @@ const fixedOverlayMenuStyle = {
   left: '800px',
 }
 
-const src1 = "https://cdn-images-1.medium.com/max/1200/0*a_4llBIWbEeO9ML5.png";
+// const src1 = "https://cdn-images-1.medium.com/max/1200/0*a_4llBIWbEeO9ML5.png";
 
 const LeftImage = () => (
   <Image

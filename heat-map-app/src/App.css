@@ -1,0 +1,22 @@
+html {
+  /* 10px if the browser was 16px*/
+  /* 1rem === 10px @ medium browser settings */
+  font-size: 62.5%;
+}
+
+.App {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.login-form-container {
+
+}
+
+.login-icon-container {
+  margin-bottom: 5%;
+}
+
+.login-form-header {
+  font-size: 2.3rem;
+}

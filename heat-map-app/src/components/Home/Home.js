@@ -52,7 +52,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content="Don't shoot yourself in the foot. Get educated."
+      content="Stay educated. Stay Safe."
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '2.0em',
@@ -271,43 +271,35 @@ class Home extends Component {
                             data={this.state.data} 
                             latlng={this.state.latlng}
                         /> : null}
-                        <Header as='h3' style={{ fontSize: '4em' }}>
-                            Vector Layers Example
-                        </Header>
-                        <VectorLayers />
-                        {/* <p style={{ fontSize: '1.33em' }}>
-                        We can give your company superpowers to do things that they never thought possible.
-                        Let us delight your customers and empower your needs... through pure data analytics.
-                        </p> */}
-                    </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                    <Grid.Column textAlign='center'>
-                        <Button size='huge'>Check Them Out</Button>
                     </Grid.Column>
                     </Grid.Row>
                 </Grid>
                 </Segment>
                 <Segment style={{ padding: '0em' }} vertical>
-                <Grid celled='internally' columns='equal' stackable>
-                    <Grid.Row textAlign='center'>
-                    <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                        <Header as='h3' style={{ fontSize: '2em' }}>
-                        "What a Company"
-                        </Header>
-                        <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
-                    </Grid.Column>
-                    <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                        <Header as='h3' style={{ fontSize: '2em' }}>
-                        "I shouldn't have gone with their competitor."
-                        </Header>
-                        <p style={{ fontSize: '1.33em' }}>
-                        <Image avatar src='/images/avatar/large/nan.jpg' />
-                        <b>Nan</b> Chief Fun Officer Acme Toys
-                        </p>
-                    </Grid.Column>
-                    </Grid.Row>
-                </Grid>
+                    <Grid celled='internally' columns='equal' stackable>
+                        <Grid.Column textAlign='center'>
+                            <Header as='h3' style={{ fontSize: '4em' }}>
+                                Articles on Gun Violence
+                            </Header>
+                        </Grid.Column>
+                        <Grid.Row textAlign='center'>
+                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                            <Header as='h3' style={{ fontSize: '2em' }}>
+                            "What a Company"
+                            </Header>
+                            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+                        </Grid.Column>
+                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                            <Header as='h3' style={{ fontSize: '2em' }}>
+                            "I shouldn't have gone with their competitor."
+                            </Header>
+                            <p style={{ fontSize: '1.33em' }}>
+                            <Image avatar src='/images/avatar/large/nan.jpg' />
+                            <b>Nan</b> Chief Fun Officer Acme Toys
+                            </p>
+                        </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
                 </Segment>
                 <Segment style={{ padding: '8em 0em' }} vertical>
                 <Container text>

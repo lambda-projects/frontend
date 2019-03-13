@@ -125,12 +125,12 @@ class DesktopContainer extends Component {
               size='huge'
             >
               <Container style={{ zIndex: 2 }}>
-                <Menu.Item as='a' active>
+                <Menu.Item as='a' active style={{ fontSize: '1.6rem' }}>
                   Home
                 </Menu.Item>
-                <Menu.Item as='a'>About Us</Menu.Item>
-                <Menu.Item as='a'>Data Visualizations</Menu.Item>
-                <Menu.Item as='a'>Heat Map</Menu.Item>
+                <Menu.Item as='a' style={{ fontSize: '1.6rem' }}>About Us</Menu.Item>
+                <Menu.Item as='a' style={{ fontSize: '1.6rem' }}>Data Visualizations</Menu.Item>
+                <Menu.Item as='a' style={{ fontSize: '1.6rem' }}>Heat Map</Menu.Item>
                 <Menu.Item position='right'>
                   <Button as='a' inverted={!fixed} style={{ fontSize: '1.6rem'}}>
                     Log in

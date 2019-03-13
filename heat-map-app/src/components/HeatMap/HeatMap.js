@@ -17,7 +17,7 @@ export default class HeatMap extends Component {
   render() {
     console.log("Inside <HeatMap />'s render() function: ", this.props.fakeData);
 
-    const position = this.props.latlng;
+    const position = this.props.coordinates[10];
     
     if (position) {
       console.log(position, [this.props.lat, this.props.lng]);
@@ -44,9 +44,9 @@ export default class HeatMap extends Component {
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {this.props.coordinates.map(position => {
+          {this.props.coordinates.map((position,index) => {
             return (
-              <Marker position={position}>
+              <Marker key={index} position={position}>
               <Popup>
                 <h4>Year of Incident: {this.props.data.year}</h4>
                 <h4>Type: {this.props.data.incident_type}</h4>            

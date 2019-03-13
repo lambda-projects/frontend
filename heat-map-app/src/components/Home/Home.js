@@ -40,7 +40,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Gun Violence in America'
+      content='Welcome to Shots Fired!'
       inverted
       style={{
         fontSize: mobile ? '2em' : '5em',
@@ -51,12 +51,22 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content="Stay educated. Stay Safe."
+      content="Education on gun violence is our name."
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '2.0em',
         fontWeight: 'normal',
         marginTop: mobile ? '0.5em' : '1.0em',
+      }}
+    />
+      <Header
+      as='h3'
+      content="Making gun data cool is our game."
+      inverted
+      style={{
+        fontSize: mobile ? '1.5em' : '2.0em',
+        fontWeight: 'normal',
+        marginTop: mobile ? '0.0em' : '0.0em',
       }}
     />
     <Image src={src1} size="huge" centered />

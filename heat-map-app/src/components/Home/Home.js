@@ -317,24 +317,71 @@ class Home extends Component {
                     <Grid celled='internally' columns='equal' stackable>
                         <Grid.Column textAlign='center'>
                             <Header as='h3' style={{ fontSize: '4em' }}>
-                                Articles on Gun Violence
+                                Our Inspirations
                             </Header>
                         </Grid.Column>
                         <Grid.Row textAlign='center'>
                         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
                             <Header as='h3' style={{ fontSize: '2em' }}>
-                            "What a Company"
+                              "Visualizing gun violence in America"
                             </Header>
-                            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+                            <Image
+                              src='https://pbs.twimg.com/profile_images/1100195544452886528/HrCPcjkR_400x400.png'
+                              as='a'
+                              size='small'
+                              href='https://blog.mapbox.com/visualizing-gun-violence-in-america-bb36021b3aae'
+                              target='_blank'
+                            />
+                            <Header as='h3' style={{ fontSize: '1.5em' }}>
+                              Provided by Mikel Maron
+                            </Header>
                         </Grid.Column>
                         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
                             <Header as='h3' style={{ fontSize: '2em' }}>
-                            "I shouldn't have gone with their competitor."
+                            "gunviolencearchive.org"
                             </Header>
-                            <p style={{ fontSize: '1.33em' }}>
-                            <Image avatar src='/images/avatar/large/nan.jpg' />
-                            <b>Nan</b> Chief Fun Officer Acme Toys
-                            </p>
+                            <Image
+                              src='https://pbs.twimg.com/profile_images/1085188573295329287/nEY2tEC4_400x400.jpg'
+                              as='a'
+                              size='small'
+                              href='https://www.gunviolencearchive.org/'
+                              target='_blank'
+                            />
+                            <Header as='h3' style={{ fontSize: '1.5em' }}>
+                              Provided by Gun Violence Archive
+                            </Header>                            
+                        </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row textAlign='center'>
+                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                            <Header as='h3' style={{ fontSize: '2em' }}>
+                            "Gun Violence Dataset"
+                            </Header>
+                            <Image
+                              src='https://pbs.twimg.com/profile_images/1092536581246906370/cJ9y8yQS_400x400.jpg'
+                              as='a'
+                              size='small'
+                              href='https://www.kaggle.com/jameslko/gun-violence-data'
+                              target='_blank'
+                            />
+                            <Header as='h3' style={{ fontSize: '1.5em' }}>
+                              Provided by James Ko
+                            </Header>
+                        </Grid.Column>
+                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                            <Header as='h3' style={{ fontSize: '2em' }}>
+                            "America’s unique gun violence problem, explained in 17 maps and charts"
+                            </Header>
+                            <Image
+                              src='https://pbs.twimg.com/profile_images/1104583920086065152/_qjf-o_V_400x400.png'
+                              as='a'
+                              size='small'
+                              href='https://www.vox.com/policy-and-politics/2017/10/2/16399418/us-gun-violence-statistics-maps-charts'
+                              target='_blank'
+                            />
+                            <Header as='h3' style={{ fontSize: '1.5em' }}>
+                              Provided by German Lopez
+                            </Header>                            
                         </Grid.Column>
                         </Grid.Row>
                     </Grid>

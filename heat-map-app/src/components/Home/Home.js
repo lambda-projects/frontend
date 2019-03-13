@@ -326,7 +326,7 @@ class Home extends Component {
                               "Visualizing gun violence in America"
                             </Header>
                             <Image
-                              src='https://pbs.twimg.com/profile_images/1100195544452886528/HrCPcjkR_400x400.png'
+                              src='../../images/mapbox.png'
                               as='a'
                               size='small'
                               href='https://blog.mapbox.com/visualizing-gun-violence-in-america-bb36021b3aae'

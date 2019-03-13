@@ -343,8 +343,8 @@ class Home extends Component {
                               size='large'
                               rounded
                             /><br/>
-                            <Modal style={{ border: '1px solid blue' }} trigger={<Button style={{ marginTop: '1.5rem' }}>Learn More</Button>}>
-                              <Modal.Content image>
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
                                 <Grid.Row textAlign='center'>
                                 <Image 
                                   wrapped 
@@ -362,54 +362,99 @@ class Home extends Component {
                             </Modal>
                         </Grid.Column>
                         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '1.5rem' }}>
-                            "gunviolencearchive.org"
+                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '0.0rem' }}>
+                              "gunviolencearchive.org"
                             </Header>
+                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
+                              Provided by Gun Violence Archive
+                            </Header> 
                             <Image
                               src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/gva.png?raw=true'
                               as='a'
                               size='large'
-                              href='https://www.gunviolencearchive.org/'
-                              target='_blank'
                               rounded
-                            />
-                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
-                              Provided by Gun Violence Archive
-                            </Header>                            
+                              /><br/>
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
+                                <Grid.Row textAlign='center'>
+                                <Image 
+                                  wrapped 
+                                  rounded
+                                  as='a' 
+                                  href='https://www.gunviolencearchive.org/'
+                                  target='_blank'
+                                  src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/gva.png?raw=true' 
+                                />
+                                <Modal.Description>
+                                  <p style={{ color: 'black', fontSize: '2.0rem', paddingTop: '1.0rem' }}>Click the screenshot above to view the actual website.</p>
+                                </Modal.Description> 
+                                </Grid.Row>                          
+                              </Modal.Content>
+                            </Modal>                           
                         </Grid.Column>
                         </Grid.Row>
                         <Grid.Row textAlign='center'>
                         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '1.5rem' }}>
-                            "Gun Violence Dataset"
+                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '0.0rem' }}>
+                              "Gun Violence Dataset"
+                            </Header>
+                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
+                              Provided by James Ko
                             </Header>
                             <Image
                               src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/kaggle.png?raw=true'
                               as='a'
                               size='large'
-                              href='https://www.kaggle.com/jameslko/gun-violence-data'
-                              target='_blank'
                               rounded
-                            />
-                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
-                              Provided by James Ko
-                            </Header>
+                              /><br/>
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
+                                <Grid.Row textAlign='center'>
+                                <Image 
+                                  wrapped 
+                                  rounded
+                                  as='a' 
+                                  href='https://www.kaggle.com/jameslko/gun-violence-data'
+                                  target='_blank'
+                                  src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/kaggle.png?raw=true' 
+                                />
+                                <Modal.Description>
+                                  <p style={{ color: 'black', fontSize: '2.0rem', paddingTop: '1.0rem' }}>Click the screenshot above to view the actual website.</p>
+                                </Modal.Description> 
+                                </Grid.Row>                          
+                              </Modal.Content>
+                            </Modal>  
                         </Grid.Column>
                         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '1.5rem' }}>
-                            "America’s unique gun violence problem..."
+                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '0.0rem' }}>
+                              "America’s unique gun violence problem..."
                             </Header>
+                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
+                              Provided by German Lopez
+                            </Header> 
                             <Image
                               src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/vox.png?raw=true'
                               as='a'
                               size='large'
-                              href='https://www.vox.com/policy-and-politics/2017/10/2/16399418/us-gun-violence-statistics-maps-charts'
-                              target='_blank'
                               rounded
-                            />
-                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
-                              Provided by German Lopez
-                            </Header>                            
+                              /><br/>   
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
+                                <Grid.Row textAlign='center'>
+                                <Image 
+                                  wrapped 
+                                  rounded
+                                  as='a' 
+                                  href='https://www.vox.com/policy-and-politics/2017/10/2/16399418/us-gun-violence-statistics-maps-charts'
+                                  target='_blank'
+                                  src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/vox.png?raw=true' 
+                                />
+                                <Modal.Description>
+                                  <p style={{ color: 'black', fontSize: '2.0rem', paddingTop: '1.0rem' }}>Click the screenshot above to view the actual website.</p>
+                                </Modal.Description> 
+                                </Grid.Row>                          
+                              </Modal.Content>
+                            </Modal>                          
                         </Grid.Column>
                         </Grid.Row>
                     </Grid>

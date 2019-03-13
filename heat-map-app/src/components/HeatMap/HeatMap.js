@@ -27,7 +27,12 @@ export default class HeatMap extends Component {
         />
         <Marker position={position}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            <h4>Year of Incident: {this.props.data.year}</h4>
+            <h4>Type: {this.props.data.incident_type}</h4>            
+            <h4>Location: {this.props.data.city_or_county}, {this.props.data.state}</h4>
+            <h4>Number of People Killed: {this.props.data.n_killed}</h4>
+            <h4>Number of People Injured: {this.props.data.n_injured}</h4>
+            <h4>Number of Guns Involved: {this.props.data.n_guns_involved}</h4>
           </Popup>
         </Marker>
       </Map> 

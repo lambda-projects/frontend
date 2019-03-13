@@ -41,11 +41,11 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Welcome to Shots Fired!'
+      content='Welcome to the Shots Fired App'
       inverted
       style={{
         fontFamily: 'Playfair Display SC, serif',
-        fontSize: mobile ? '2em' : '5em',
+        fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '0.25em',

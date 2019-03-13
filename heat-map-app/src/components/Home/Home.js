@@ -19,6 +19,7 @@ import {
 } from 'semantic-ui-react';
 
 import HeatMap from "../HeatMap/HeatMap";
+import Portal from "../Portal/Portal";
 
 import '../../App.css';
 
@@ -311,6 +312,7 @@ class Home extends Component {
                             latlng={this.state.latlng}
                             id="heatmap"
                         /> : null}
+                        <Portal/>
                     </Grid.Column>
                     </Grid.Row>
                 </Grid>

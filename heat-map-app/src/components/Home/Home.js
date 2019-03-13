@@ -77,6 +77,7 @@ const HomepageHeading = ({ mobile }) => (
         primary size='huge'
         style={{
             marginTop: mobile ? '1.5em' : '1.0em',
+            fontSize: '1.6rem'
           }}
     >
       Interactive Heat Maps
@@ -131,10 +132,10 @@ class DesktopContainer extends Component {
                 <Menu.Item as='a'>Data Visualizations</Menu.Item>
                 <Menu.Item as='a'>Heat Map</Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>
+                  <Button as='a' inverted={!fixed} style={{ fontSize: '1.6rem'}}>
                     Log in
                   </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em', fontSize: '1.6rem' }}>
                     Sign Up
                   </Button>
                 </Menu.Item>
@@ -179,14 +180,14 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as='a' active>
+          <Menu.Item as='a' active style={{ fontSize: '1.6rem'}}>
             Home
           </Menu.Item>
-          <Menu.Item as='a'>Work</Menu.Item>
-          <Menu.Item as='a'>Company</Menu.Item>
-          <Menu.Item as='a'>Careers</Menu.Item>
-          <Menu.Item as='a'>Log in</Menu.Item>
-          <Menu.Item as='a'>Sign Up</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>About Us</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Data Visualizations</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Heat Map</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Log in</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Sign Up</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -199,7 +200,7 @@ class MobileContainer extends Component {
             <Container>
               <Menu inverted pointing secondary size='large'>
                 <Menu.Item onClick={this.handleToggle}>
-                  <Icon name='sidebar' />
+                  <Icon name='sidebar' style={{ fontSize: '3.0rem', paddingTop: '7px'}} />
                 </Menu.Item>
                 <Menu.Item position='right'>
                   <Button as='a' inverted>

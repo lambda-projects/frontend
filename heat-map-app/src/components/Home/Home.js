@@ -122,7 +122,7 @@ class DesktopContainer extends Component {
               secondary={!fixed}
               size='huge'
             >
-              <Container>
+              <Container style={{ zIndex: 2 }}>
                 <Menu.Item as='a' active>
                   Home
                 </Menu.Item>

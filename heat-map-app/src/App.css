@@ -28,6 +28,7 @@ p {
 .heatmap {
   height: 500px;
   margin-top: 20px;
+  z-index: 0;
 }
 
 .loading-text {

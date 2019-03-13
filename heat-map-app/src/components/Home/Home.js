@@ -51,7 +51,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content="Education on gun violence is our name."
+      content="Don't just consume our data."
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '2.0em',
@@ -61,7 +61,7 @@ const HomepageHeading = ({ mobile }) => (
     />
       <Header
       as='h3'
-      content="Making gun data cool is our game."
+      content="Interact with it."
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '2.0em',
@@ -326,9 +326,9 @@ class Home extends Component {
                               "Visualizing gun violence in America"
                             </Header>
                             <Image
-                              src='../../images/mapbox.png'
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/mapbox.png?raw=true'
                               as='a'
-                              size='small'
+                              size='large'
                               href='https://blog.mapbox.com/visualizing-gun-violence-in-america-bb36021b3aae'
                               target='_blank'
                             />
@@ -341,9 +341,9 @@ class Home extends Component {
                             "gunviolencearchive.org"
                             </Header>
                             <Image
-                              src='https://pbs.twimg.com/profile_images/1085188573295329287/nEY2tEC4_400x400.jpg'
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/gva.png?raw=true'
                               as='a'
-                              size='small'
+                              size='large'
                               href='https://www.gunviolencearchive.org/'
                               target='_blank'
                             />
@@ -358,9 +358,9 @@ class Home extends Component {
                             "Gun Violence Dataset"
                             </Header>
                             <Image
-                              src='https://pbs.twimg.com/profile_images/1092536581246906370/cJ9y8yQS_400x400.jpg'
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/kaggle.png?raw=true'
                               as='a'
-                              size='small'
+                              size='large'
                               href='https://www.kaggle.com/jameslko/gun-violence-data'
                               target='_blank'
                             />
@@ -373,9 +373,9 @@ class Home extends Component {
                             "America’s unique gun violence problem, explained in 17 maps and charts"
                             </Header>
                             <Image
-                              src='https://pbs.twimg.com/profile_images/1104583920086065152/_qjf-o_V_400x400.png'
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/vox.png?raw=true'
                               as='a'
-                              size='small'
+                              size='large'
                               href='https://www.vox.com/policy-and-politics/2017/10/2/16399418/us-gun-violence-statistics-maps-charts'
                               target='_blank'
                             />

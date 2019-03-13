@@ -26,6 +26,10 @@ p {
 }
 
 .heatmap {
-  height: 400px;
+  height: 500px;
   margin-top: 20px;
+}
+
+.loading-text {
+  font-size: 3.0rem;
 }

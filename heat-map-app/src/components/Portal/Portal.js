@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Form, Grid, Header, Segment, TransitionablePortal } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Form, Grid, Header, Segment, TransitionablePortal } from 'semantic-ui-react';
 
 const transitions = [
   'browse',

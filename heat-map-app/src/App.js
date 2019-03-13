@@ -10,7 +10,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <Container className="App">
+      <Container className="App" style={{ width: '100%' }}>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={LoginForm} />
       </Container>

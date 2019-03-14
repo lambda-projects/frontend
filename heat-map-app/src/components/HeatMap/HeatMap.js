@@ -3,32 +3,21 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import '../../App.css';
 
-export default class HeatMap extends React.Component {
-  state = {
-    ohioData: this.props.ohioData,
-    lat: null,
-    lng: null,
-    zoom: 13
-  }
 
-  componentDidMount() {
-    this.setState = ({
-      latLng: [this.state.ohioData.lat, this.state.ohioData.lng]
-    })
-  }
+const HeatMap = (props) => {
+  console.log(props.ohioData[0]);
+  const position = [props.lat, props.lng];
 
-  render() {
-    if (this.state.lat) {
-      console.log(this.state.ohioData);
+    if (position) {
 
       return (
-        <Map className="heatmap" center={this.state.latLng} zoom={this.state.zoom}>
+        <Map className="heatmap" center={position} zoom={props.zoom}>
           <TileLayer
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {this.state.ohioData.map(incident => {
+          {props.ohioData.map(incident => {
               const position = [incident.latitude, incident.longitude];
 
               return (
@@ -52,5 +41,6 @@ export default class HeatMap extends React.Component {
         <h1 className="loading-text">Map is Loading...</h1>
       );
     }
-  }
 };
+
+export default HeatMap;

@@ -239,7 +239,9 @@ ResponsiveContainer.propTypes = {
 class Home extends Component {
     state = {
       ohioData: [],
-      zoom: 13
+      zoom: 14,
+      lat: 41.4455,
+      lng: -82.1377,
     }
 
     componentDidMount() {
@@ -260,7 +262,7 @@ class Home extends Component {
     }
 
     render() {
-      console.log("Inside <Home />'s render() function: ", this.state.ohioData);
+      console.log("Inside <Home />'s render() function: ", this.state.ohioData[0]);
         return(
             <ResponsiveContainer>
                 <Segment style={{ padding: '8em 0em' }} vertical>
@@ -273,6 +275,8 @@ class Home extends Component {
                         <HeatMap 
                           ohioData={this.state.ohioData}
                           zoom={this.state.zoom}
+                          lat={this.state.lat}
+                          lng={this.state.lng}
                         />
                     </Grid.Column>
                     </Grid.Row>

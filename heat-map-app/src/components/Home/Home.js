@@ -19,6 +19,7 @@ import {
 } from 'semantic-ui-react';
 
 import HeatMap from "../HeatMap/HeatMap";
+import EmbedIframe from "../EmbedIframe/EmbedIframe";
 
 import '../../App.css';
 
@@ -269,6 +270,10 @@ class Home extends Component {
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
                     <Grid.Column width={16}>
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <EmbedIframe />
                         <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
                           State-Level Heat Map Example for Minnesota
                         </Header>

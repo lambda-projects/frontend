@@ -20,7 +20,9 @@ import {
 
 import HeatMap from "../HeatMap/HeatMap";
 import App from "../App/App";
-import App2 from "../App2/App2";
+import App2 from "../App/App2";
+import Embed from "../Embed/Embed";
+import Embed2 from "../Embed/Embed2";
 
 import '../../App.css';
 
@@ -273,6 +275,8 @@ class Home extends Component {
                     <Grid.Column width={16}>
                         <App />
                         <App2 />
+                        <Embed />
+                        <Embed2 />
                         <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
                           State-Level Marker Map Example for Minnesota
                         </Header>

@@ -19,7 +19,6 @@ import {
 } from 'semantic-ui-react';
 
 import HeatMap from "../HeatMap/HeatMap";
-import Portal from "../Portal/Portal";
 
 import '../../App.css';
 
@@ -239,55 +238,19 @@ ResponsiveContainer.propTypes = {
 
 class Home extends Component {
     state = {
-        data: {},
-        coordinates:
-          [
-            [51.359296, 0.00118],
-            [51.606675, 0.984749],
-            [51.431413, 0.124869],
-            [51.184951, 0.859696],
-            [51.069935, 0.580372],
-            [51.960397, 0.421541],
-            [51.004212, 0.322956],
-            [51.889196, 0.262709],
-            [51.058981, 0.13674],
-            [51.053504, 0.01077],
-            [51.141136, -1.840985],
-            [51.042551, -1.539753],
-            [51.113751, -1.27686],
-            [51.004212, -1.003013],
-            [51.497137, 0.997536],
-            [53.600282, 0.997536],
-            [53.633143, 0.86609],
-            [53.408589, 0.674397],
-            [53.446927, 0.510088],
-            [53.37025, 0.427934],
-            [53.518128, 0.280057],
-            [53.655051, 0.247195],
-            [53.90699, 0.411504],
-            [53.934375, 0.657966],
-            [53.011052, 0.685351],
-            [54.10416, 0.499135],
-            [54.137022, 0.318396],
-            [54.394438, 0.367688],
-            [54.471115, -1.895754],
-            [54.241084, -3.796253],
-            [54.098683, -4.891641],
-            [54.202745, -4.995703],
-            [54.359296, -5.00118]
-          ]
+      ohioData: [],
+      zoom: 13
     }
 
     componentDidMount() {
-        console.log("CDM inside of <Home/> : ", this.state.coordinates);
+        // console.log("CDM is running inside of <Home/> : ", this.state.data);
 
         axios
-        .get('https://dbase.wtf/api/gundata/478855')
+        .get('https://dbase.wtf/api/gundata/state/Ohio')
         .then(res => {
           // console.log(res);
           this.setState({ 
-              data: res.data,
-              latlng: [res.data.latitude, res.data.longitude],
+              ohioData: res.data
             });
         })
         .catch(err => {
@@ -297,6 +260,7 @@ class Home extends Component {
     }
 
     render() {
+      console.log("Inside <Home />'s render() function: ", this.state.ohioData);
         return(
             <ResponsiveContainer>
                 <Segment style={{ padding: '8em 0em' }} vertical>
@@ -306,14 +270,10 @@ class Home extends Component {
                         <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
                             Interactive Gun Violence Heat Map
                         </Header>
-                        {this.state.data ? 
                         <HeatMap 
-                            coordinates={this.state.coordinates}
-                            data={this.state.data} 
-                            latlng={this.state.latlng}
-                            id="heatmap"
-                        /> : null}
-                        <Portal/>
+                          ohioData={this.state.ohioData}
+                          zoom={this.state.zoom}
+                        />
                     </Grid.Column>
                     </Grid.Row>
                 </Grid>

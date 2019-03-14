@@ -277,7 +277,7 @@ class Home extends Component {
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
                       <Grid.Column width={16}>
-                      <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                      <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '0' }}>
                           <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
                             Bar Graph of Gun Crime Per 10,000 People
                           </Header>

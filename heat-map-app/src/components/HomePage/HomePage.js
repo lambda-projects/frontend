@@ -189,17 +189,17 @@ export default class HomePage extends Component {
             >
               <Menu.Item>
                 <Icon name='twitter' />
-                Twitter
+                <a href='https://twitter.com/LambdaSchool' > Twitter </a>
               </Menu.Item>
 
               <Menu.Item>
                 <Icon name='facebook' />
-                Share
+                <a href ='https://www.facebook.com/LambdaSchoolOnline/' > Share </a>
               </Menu.Item>
 
               <Menu.Item>
                 <Icon name='mail' />
-                Email
+                <a href='mailto:contact@lambdaschool.com' > Email </a>
               </Menu.Item>
             </Menu>
           </div>

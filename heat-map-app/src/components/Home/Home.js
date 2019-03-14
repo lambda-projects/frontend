@@ -19,6 +19,8 @@ import {
 } from 'semantic-ui-react';
 
 import HeatMap from "../HeatMap/HeatMap";
+import App from "../App/App";
+import App2 from "../App2/App2";
 
 import '../../App.css';
 
@@ -269,8 +271,10 @@ class Home extends Component {
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
                     <Grid.Column width={16}>
+                        <App />
+                        <App2 />
                         <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
-                          State-Level Heat Map Example for Minnesota
+                          State-Level Marker Map Example for Minnesota
                         </Header>
                         <HeatMap 
                           minnData={this.state.minnData}

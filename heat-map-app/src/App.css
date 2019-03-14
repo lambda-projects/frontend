@@ -5,7 +5,7 @@ html {
 }
 
 p {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 .App {
@@ -23,4 +23,14 @@ p {
 
 .login-form-header {
   font-size: 2.3rem;
+}
+
+.heatmap {
+  height: 500px;
+  margin-top: 20px;
+  z-index: 0;
+}
+
+.loading-text {
+  font-size: 3.0rem;
 }

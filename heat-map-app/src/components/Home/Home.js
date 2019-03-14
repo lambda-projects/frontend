@@ -238,21 +238,21 @@ ResponsiveContainer.propTypes = {
 
 class Home extends Component {
     state = {
-      ohioData: [],
+      minnData: [],
       zoom: 14,
-      lat: 41.4455,
-      lng: -82.1377,
+      lat: 44.9481,
+      lng: -93.2505,
     }
 
     componentDidMount() {
         // console.log("CDM is running inside of <Home/> : ", this.state.data);
 
         axios
-        .get('https://dbase.wtf/api/gundata/state/Ohio')
+        .get('https://dbase.wtf/api/gundata/state/Minnesota')
         .then(res => {
           // console.log(res);
           this.setState({ 
-              ohioData: res.data
+              minnData: res.data
             });
         })
         .catch(err => {
@@ -262,7 +262,7 @@ class Home extends Component {
     }
 
     render() {
-      console.log("Inside <Home />'s render() function: ", this.state.ohioData[0]);
+      console.log("Inside <Home />'s render() function: ", this.state.minnData[0]);
         return(
             <ResponsiveContainer>
                 <Segment style={{ padding: '8em 0em' }} vertical>
@@ -273,7 +273,7 @@ class Home extends Component {
                             Interactive Gun Violence Heat Map
                         </Header>
                         <HeatMap 
-                          ohioData={this.state.ohioData}
+                          minnData={this.state.minnData}
                           zoom={this.state.zoom}
                           lat={this.state.lat}
                           lng={this.state.lng}

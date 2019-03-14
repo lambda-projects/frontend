@@ -5,7 +5,7 @@ import '../../App.css';
 
 
 const HeatMap = (props) => {
-  console.log(props.ohioData[0]);
+  console.log(props.minnData[0]);
   const position = [props.lat, props.lng];
 
     if (position) {
@@ -17,7 +17,7 @@ const HeatMap = (props) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {props.ohioData.map(incident => {
+          {props.minnData.map(incident => {
               const position = [incident.latitude, incident.longitude];
 
               return (

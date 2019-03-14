@@ -75,7 +75,11 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.0em' : '0.0em',
       }}
     />
-    <Image src={src1} size="huge" centered />
+    <Image 
+      src={src1} 
+      size="huge" 
+      centered 
+    />
     <Button 
         primary size='huge'
         style={{

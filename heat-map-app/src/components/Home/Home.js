@@ -270,7 +270,7 @@ class Home extends Component {
                     <Grid.Row>
                     <Grid.Column width={16}>
                         <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
-                            Interactive Gun Violence Heat Map
+                          State-Level Heat Map Example for Minnesota
                         </Header>
                         <HeatMap 
                           minnData={this.state.minnData}

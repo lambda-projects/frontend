@@ -20,7 +20,7 @@ import {
 
 import HeatMap from "../HeatMap/HeatMap";
 import App from "../App/App";
-import App2 from "../App/App2";
+// import App2 from "../App/App2";
 import Embed from "../Embed/Embed";
 import Embed2 from "../Embed/Embed2";
 
@@ -272,21 +272,43 @@ class Home extends Component {
                 <Segment style={{ padding: '8em 0em' }} vertical>
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
-                    <Grid.Column width={16}>
-                        <App />
-                        <App2 />
-                        <Embed />
-                        <Embed2 />
-                        <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
-                          State-Level Marker Map Example for Minnesota
-                        </Header>
-                        <HeatMap 
-                          minnData={this.state.minnData}
-                          zoom={this.state.zoom}
-                          lat={this.state.lat}
-                          lng={this.state.lng}
-                        />
-                    </Grid.Column>
+                      <Grid.Column width={16}>
+                      <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                            Bar Graph of Gun Crime Per 10,000 People
+                          </Header>
+                          <App />                    
+                        </Grid.Row>
+                        {/* <Grid.Row textAlign='center'>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                            Bar Graph of Gun Crime Per 10,000 People
+                          </Header>
+                          <App2 />                 
+                        </Grid.Row>                    */}
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                            Choropleth Map of U.S. Gun Violence in 2013
+                          </Header>
+                          <Embed />                    
+                        </Grid.Row>
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                              Scatter Plot of U.S. Mass Shootings for 2013-2017
+                          </Header>
+                          <Embed2 />                   
+                        </Grid.Row>                        
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                            State-Level Marker Map Example for Minnesota
+                          </Header>
+                          <HeatMap 
+                            minnData={this.state.minnData}
+                            zoom={this.state.zoom}
+                            lat={this.state.lat}
+                            lng={this.state.lng}
+                          />                 
+                        </Grid.Row>                         
+                      </Grid.Column>
                     </Grid.Row>
                 </Grid>
                 </Segment>

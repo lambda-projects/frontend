@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import { 
 	Button, 
 	Form, 
@@ -36,12 +37,10 @@ class Signup extends React.Component {
 
 
 
-    registerUser = (userRegistration, props) => {
+    registerUser = props => userRegistration => {
         axios
             .post('https://dbase.wtf/api/user/register', userRegistration)
-            .then(
-                props.history.push("/login")
-            )
+            .then()
             .catch();
           };
 	
@@ -94,7 +93,7 @@ class Signup extends React.Component {
 						</Segment>
 					</Form>
 					<Message>
-						Already have an account? <a href='/login'>Login</a>
+						Already have an account? <Link to='/login'>Login</Link>
 					</Message>
 				</Grid.Column>
 			</Grid>

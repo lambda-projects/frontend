@@ -14,9 +14,9 @@ import LoginNavbar from "../LoginNavbar/LoginNavbar";
 import '../../App.css';
 
 
-class LoginForm extends React.Component {
-	constructor() {
-		super();
+class Signup extends React.Component {
+	constructor(props) {
+		super(props);
 		this.state = {
 			username: "",
 			password: ""
@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
 		e.preventDefault();
 		console.log("The login button was just clicked!");
 		
-		this.loginUser(this.state);
+		this.registerUser(this.state);
 	}
 
 	handleChanges = e => {
@@ -35,16 +35,16 @@ class LoginForm extends React.Component {
 	};
 
 
-	loginUser = userCredentials => {
-		axios
-		  .post('https://dbase.wtf/api/user/login', userCredentials)
-		  .then(response => {
-			window.localStorage.setItem("token", response.data.token);
-			window.localStorage.setItem("username", userCredentials.username);
-			window.localStorage.setItem("userId", response.data.id);
-		  })
-		  .catch();
-	  };
+
+    registerUser = (userRegistration, props) => {
+        axios
+            .post('https://dbase.wtf/api/user/register', userRegistration)
+            .then(
+                props.history.push("/login")
+            )
+            .catch();
+          };
+	
 
 
 	render() {
@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
 				<Grid.Column style={{ maxWidth: 450 }}>
 					<Header as='h2' color='teal' textAlign='center'>
 					<LoginIcon />
-					<p className="login-form-header">Login to your account</p>
+					<p className="login-form-header">Register your new account</p>
 					</Header>
 					<Form size='large' onSubmit={this.handleSubmit}>
 						<Segment stacked>
@@ -74,7 +74,7 @@ class LoginForm extends React.Component {
 								icon='user' 
 								iconPosition='left'
 								name='username' 
-								placeholder='Username'
+								placeholder='Desired Username'
 								value={this.state.username} 
 								onChange={this.handleChanges}
 							/>
@@ -84,17 +84,17 @@ class LoginForm extends React.Component {
 								icon='lock'
 								iconPosition='left'
 								name='password' 
-								placeholder='Password'
+								placeholder='Desired Password'
 								onChange={this.handleChanges}								
 							/>
 
 							<Button type='submit' color='teal' fluid size='large'>
-							Login
+							    Register
 							</Button>
 						</Segment>
 					</Form>
 					<Message>
-						New to us? <a href='/signup'>Sign Up</a>
+						Already have an account? <a href='/login'>Login</a>
 					</Message>
 				</Grid.Column>
 			</Grid>
@@ -104,13 +104,4 @@ class LoginForm extends React.Component {
 	
 }
 
-export default LoginForm;
-
-
-
-// const baseUrl = "https://dbase.wtf";
-
-// user registration
-
-
-//user login
+export default Signup;

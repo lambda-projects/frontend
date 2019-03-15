@@ -10,16 +10,13 @@ const Articles = () => (
         <Card.Header>Top 20 States for Gun Violence Per Capita</Card.Header>
         <Card.Meta>Written by Daniel Harris</Card.Meta>
         <Card.Description>
-            <Image floated='right' size='mini' src='/images/avatar/large/steve.jpg' />
+            <Image floated='right' size='medium' src='images/texas-killed.png' />
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
-            View
-          </Button>
-          <Button basic color='red'>
-            Close
+          <Button basic color='orange'>
+            View Full Article
           </Button>
         </div>
       </Card.Content>
@@ -29,17 +26,14 @@ const Articles = () => (
         <Card.Header>Mass shootings, by location</Card.Header>
         <Card.Meta>Written by Daniel Harris</Card.Meta>
         <Card.Description>
-            <Image floated='right' size='mini' src='/images/avatar/large/molly.png' />
+            <Image floated='right' size='medium' src='/images/avatar/large/molly.png' />
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
-            Approve
-          </Button>
-          <Button basic color='red'>
-            Decline
-          </Button>
+        <Button basic color='orange'>
+            View Full Article
+        </Button>
         </div>
       </Card.Content>
     </Card>
@@ -48,17 +42,14 @@ const Articles = () => (
         <Card.Header>Why has Gun Violence Increased in Texas?</Card.Header>
         <Card.Meta>Written by Daniel Harris</Card.Meta>
         <Card.Description>
-            <Image floated='right' size='mini' src='/images/avatar/large/jenny.jpg' />
+            <Image floated='right' size='medium' src='/images/avatar/large/jenny.jpg' />
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
         <div className='ui two buttons'>
-          <Button basic color='green'>
-            Approve
-          </Button>
-          <Button basic color='red'>
-            Decline
-          </Button>
+        <Button basic color='orange'>
+            View Full Article
+        </Button>
         </div>
       </Card.Content>
     </Card>

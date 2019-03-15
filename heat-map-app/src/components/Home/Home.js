@@ -18,7 +18,7 @@ import {
 } from 'semantic-ui-react';
 
 import App from "../App/App";
-// import App2 from "../App/App2";
+import App2 from "../App/App2";
 import Embed from "../Embed/Embed";
 import Embed2 from "../Embed/Embed2";
 import HeatMap from "../HeatMap/HeatMap";
@@ -283,12 +283,12 @@ class Home extends Component {
                           </Header>
                           <App />                    
                         </Grid.Row>
-                        {/* <Grid.Row textAlign='center'>
-                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
-                            Bar Graph of Gun Crime Per 10,000 People
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
+                            Choropleth Map on U.S. Gun Violence 2013-2017
                           </Header>
                           <App2 />                 
-                        </Grid.Row>                    */}
+                        </Grid.Row>                   
                         <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
                           <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
                             Gun Violence Across the U.S. in 2013

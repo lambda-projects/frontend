@@ -52,7 +52,9 @@ border-spacing: 0;
 }
 
 body {
-
+  width: 100%;
+  color: white;
+  background-color: rgb(80,90,98);
 }
 
 code {

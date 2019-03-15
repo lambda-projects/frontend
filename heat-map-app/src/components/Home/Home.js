@@ -11,6 +11,7 @@ import {
   Image,
   List,
   Menu,
+  Modal,
   Responsive,
   Segment,
   Sidebar,
@@ -18,6 +19,7 @@ import {
 } from 'semantic-ui-react';
 
 import HeatMap from "../HeatMap/HeatMap";
+import EmbedIframe from "../EmbedIframe/EmbedIframe";
 
 import '../../App.css';
 
@@ -40,10 +42,11 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as='h1'
-      content='Gun Violence in America'
+      content='Welcome to the Shots Fired App'
       inverted
       style={{
-        fontSize: mobile ? '2em' : '5em',
+        fontFamily: 'Playfair Display SC, serif',
+        fontSize: mobile ? '2em' : '4em',
         fontWeight: 'normal',
         marginBottom: 0,
         marginTop: mobile ? '1.5em' : '0.25em',
@@ -51,7 +54,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as='h2'
-      content="Stay educated. Stay Safe."
+      content="Don't just consume our data."
       inverted
       style={{
         fontSize: mobile ? '1.5em' : '2.0em',
@@ -59,11 +62,22 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.5em' : '1.0em',
       }}
     />
+      <Header
+      as='h3'
+      content="Interact with it."
+      inverted
+      style={{
+        fontSize: mobile ? '1.5em' : '2.0em',
+        fontWeight: 'normal',
+        marginTop: mobile ? '0.0em' : '0.0em',
+      }}
+    />
     <Image src={src1} size="huge" centered />
     <Button 
         primary size='huge'
         style={{
             marginTop: mobile ? '1.5em' : '1.0em',
+            fontSize: '1.6rem'
           }}
     >
       Interactive Heat Maps
@@ -110,18 +124,18 @@ class DesktopContainer extends Component {
               secondary={!fixed}
               size='huge'
             >
-              <Container>
-                <Menu.Item as='a' active>
+              <Container style={{ zIndex: 2 }}>
+                <Menu.Item as='a' active style={{ fontSize: '1.6rem' }}>
                   Home
                 </Menu.Item>
-                <Menu.Item as='a'>About Us</Menu.Item>
-                <Menu.Item as='a'>Data Visualizations</Menu.Item>
-                <Menu.Item as='a'>Heat Map</Menu.Item>
+                <Menu.Item as='a' style={{ fontSize: '1.6rem' }}>About Us</Menu.Item>
+                <Menu.Item as='a' style={{ fontSize: '1.6rem' }}>Data Visualizations</Menu.Item>
+                <Menu.Item as='a' style={{ fontSize: '1.6rem' }}>Heat Map</Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted={!fixed}>
+                  <Button as='a' inverted={!fixed} style={{ fontSize: '1.6rem'}}>
                     Log in
                   </Button>
-                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em' }}>
+                  <Button as='a' inverted={!fixed} primary={fixed} style={{ marginLeft: '0.5em', fontSize: '1.6rem' }}>
                     Sign Up
                   </Button>
                 </Menu.Item>
@@ -166,14 +180,14 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as='a' active>
+          <Menu.Item as='a' active style={{ fontSize: '1.6rem'}}>
             Home
           </Menu.Item>
-          <Menu.Item as='a'>Work</Menu.Item>
-          <Menu.Item as='a'>Company</Menu.Item>
-          <Menu.Item as='a'>Careers</Menu.Item>
-          <Menu.Item as='a'>Log in</Menu.Item>
-          <Menu.Item as='a'>Sign Up</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>About Us</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Data Visualizations</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Heat Map</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Log in</Menu.Item>
+          <Menu.Item as='a' style={{ fontSize: '1.6rem'}}>Sign Up</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -186,7 +200,7 @@ class MobileContainer extends Component {
             <Container>
               <Menu inverted pointing secondary size='large'>
                 <Menu.Item onClick={this.handleToggle}>
-                  <Icon name='sidebar' />
+                  <Icon name='sidebar' style={{ fontSize: '3.0rem', paddingTop: '7px'}} />
                 </Menu.Item>
                 <Menu.Item position='right'>
                   <Button as='a' inverted>
@@ -225,21 +239,22 @@ ResponsiveContainer.propTypes = {
 
 class Home extends Component {
     state = {
-        data: {}
-      }
+      minnData: [],
+      zoom: 14,
+      lat: 44.9481,
+      lng: -93.2505,
+    }
 
     componentDidMount() {
-        console.log("CDM running", this.state.data.latitude);
-    
+        // console.log("CDM is running inside of <Home/> : ", this.state.data);
+
         axios
-        .get('https://dbase.wtf/api/gundata/478855')
+        .get('https://dbase.wtf/api/gundata/state/Minnesota')
         .then(res => {
           // console.log(res);
           this.setState({ 
-              data: res.data,
-              latlng: [res.data.latitude, res.data.longitude]
+              minnData: res.data
             });
-          console.log(this.state.data.latitude, this.state.data.longitude);
         })
         .catch(err => {
           // console.log(err);
@@ -248,28 +263,26 @@ class Home extends Component {
     }
 
     render() {
+      console.log("Inside <Home />'s render() function: ", this.state.minnData[0]);
         return(
             <ResponsiveContainer>
                 <Segment style={{ padding: '8em 0em' }} vertical>
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
                     <Grid.Column width={16}>
-                        <Header as='h3' style={{ fontSize: '4em' }}>
-                            Gun Violence Heat Map: State-level
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                          State-Level Heat Map Example for Minnesota
                         </Header>
-                        {this.state.data ? 
                         <HeatMap 
-                            data={this.state.data} 
-                            latlng={this.state.latlng}
-                        /> : null}
-                        <Header as='h3' style={{ fontSize: '4em' }}>
-                            Gun Violence Heat Map: County-level
-                        </Header>
-                        {this.state.data ? 
-                        <HeatMap 
-                            data={this.state.data} 
-                            latlng={this.state.latlng}
-                        /> : null}
+                          minnData={this.state.minnData}
+                          zoom={this.state.zoom}
+                          lat={this.state.lat}
+                          lng={this.state.lng}
+                        />
                     </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -277,33 +290,151 @@ class Home extends Component {
                 <Segment style={{ padding: '0em' }} vertical>
                     <Grid celled='internally' columns='equal' stackable>
                         <Grid.Column textAlign='center'>
-                            <Header as='h3' style={{ fontSize: '4em' }}>
-                                Articles on Gun Violence
+                            <Header 
+                              as='h3' 
+                              style={{ 
+                                fontFamily: 'Playfair Display SC, serif', 
+                                fontSize: '4em', 
+                                color: 'white',
+                              }}
+                            >
+                                Our Inspirations
                             </Header>
                         </Grid.Column>
                         <Grid.Row textAlign='center'>
                         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as='h3' style={{ fontSize: '2em' }}>
-                            "What a Company"
+                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '0.0rem' }}>
+                              "Visualizing gun violence in America"
                             </Header>
-                            <p style={{ fontSize: '1.33em' }}>That is what they all say about us</p>
+                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
+                              Provided by Mikel Maron
+                            </Header>                            
+                            <Image
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/mapbox.png?raw=true'
+                              as='a'
+                              size='large'
+                              rounded
+                            /><br/>
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
+                                <Grid.Row textAlign='center'>
+                                <Image 
+                                  wrapped 
+                                  rounded
+                                  as='a' 
+                                  href='https://blog.mapbox.com/visualizing-gun-violence-in-america-bb36021b3aae'
+                                  target='_blank'
+                                  src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/mapbox.png?raw=true' 
+                                />
+                                <Modal.Description>
+                                  <p style={{ color: 'black', fontSize: '2.0rem', paddingTop: '1.0rem' }}>Click the screenshot above to view the actual website.</p>
+                                </Modal.Description> 
+                                </Grid.Row>                          
+                              </Modal.Content>
+                            </Modal>
                         </Grid.Column>
                         <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as='h3' style={{ fontSize: '2em' }}>
-                            "I shouldn't have gone with their competitor."
+                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '0.0rem' }}>
+                              "gunviolencearchive.org"
                             </Header>
-                            <p style={{ fontSize: '1.33em' }}>
-                            <Image avatar src='/images/avatar/large/nan.jpg' />
-                            <b>Nan</b> Chief Fun Officer Acme Toys
-                            </p>
+                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
+                              Provided by Gun Violence Archive
+                            </Header> 
+                            <Image
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/gva.png?raw=true'
+                              as='a'
+                              size='large'
+                              rounded
+                              /><br/>
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
+                                <Grid.Row textAlign='center'>
+                                <Image 
+                                  wrapped 
+                                  rounded
+                                  as='a' 
+                                  href='https://www.gunviolencearchive.org/'
+                                  target='_blank'
+                                  src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/gva.png?raw=true' 
+                                />
+                                <Modal.Description>
+                                  <p style={{ color: 'black', fontSize: '2.0rem', paddingTop: '1.0rem' }}>Click the screenshot above to view the actual website.</p>
+                                </Modal.Description> 
+                                </Grid.Row>                          
+                              </Modal.Content>
+                            </Modal>                           
+                        </Grid.Column>
+                        </Grid.Row>
+                        <Grid.Row textAlign='center'>
+                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '0.0rem' }}>
+                              "Gun Violence Dataset"
+                            </Header>
+                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
+                              Provided by James Ko
+                            </Header>
+                            <Image
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/kaggle.png?raw=true'
+                              as='a'
+                              size='large'
+                              rounded
+                              /><br/>
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
+                                <Grid.Row textAlign='center'>
+                                <Image 
+                                  wrapped 
+                                  rounded
+                                  as='a' 
+                                  href='https://www.kaggle.com/jameslko/gun-violence-data'
+                                  target='_blank'
+                                  src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/kaggle.png?raw=true' 
+                                />
+                                <Modal.Description>
+                                  <p style={{ color: 'black', fontSize: '2.0rem', paddingTop: '1.0rem' }}>Click the screenshot above to view the actual website.</p>
+                                </Modal.Description> 
+                                </Grid.Row>                          
+                              </Modal.Content>
+                            </Modal>  
+                        </Grid.Column>
+                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                            <Header as='h3' style={{ fontSize: '2.5em', color: 'white', paddingBottom: '0.0rem' }}>
+                              "America’s unique gun violence problem..."
+                            </Header>
+                            <Header as='h3' style={{ fontSize: '1.5em', color: 'white' }}>
+                              Provided by German Lopez
+                            </Header> 
+                            <Image
+                              src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/vox.png?raw=true'
+                              as='a'
+                              size='large'
+                              rounded
+                              /><br/>   
+                            <Modal trigger={<Button style={{ fontSize: '1.6rem', marginTop: '1.5rem' }}>Learn More</Button>}>
+                              <Modal.Content image style={{ backgroundColor: 'lightgray' }}>
+                                <Grid.Row textAlign='center'>
+                                <Image 
+                                  wrapped 
+                                  rounded
+                                  as='a' 
+                                  href='https://www.vox.com/policy-and-politics/2017/10/2/16399418/us-gun-violence-statistics-maps-charts'
+                                  target='_blank'
+                                  src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/vox.png?raw=true' 
+                                />
+                                <Modal.Description>
+                                  <p style={{ color: 'black', fontSize: '2.0rem', paddingTop: '1.0rem' }}>Click the screenshot above to view the actual website.</p>
+                                </Modal.Description> 
+                                </Grid.Row>                          
+                              </Modal.Content>
+                            </Modal>                          
                         </Grid.Column>
                         </Grid.Row>
                     </Grid>
                 </Segment>
-                <Segment style={{ padding: '8em 0em' }} vertical>
+                <Segment style={{ padding: '8em 0em', borderTop: '1px solid white' }} vertical>
                 <Container text>
-                    <Header as='h3' style={{ fontSize: '2em' }}>
-                    Breaking The Grid, Grabs Your Attention
+                    <Header as='h3' style={{ fontSize: '2.5em', color: 'white' }}>
+                      More Data Visualizations
                     </Header>
                     <p style={{ fontSize: '1.33em' }}>
                     Instead of focusing on content creation and hard work, we have learned how to master the
@@ -338,31 +469,31 @@ class Home extends Component {
                 <Container>
                     <Grid divided inverted stackable>
                     <Grid.Row>
-                        <Grid.Column width={3}>
-                        <Header inverted as='h4' content='About' />
+                        <Grid.Column width={4}>
+                        <Header inverted as='h4' content='About Lambda School' style={{ fontSize: '2.0rem' }} />
                         <List link inverted>
-                            <List.Item as='a'>Sitemap</List.Item>
-                            <List.Item as='a'>Contact Us</List.Item>
-                            <List.Item as='a'>Religious Ceremonies</List.Item>
-                            <List.Item as='a'>Gazebo Plans</List.Item>
+                            <List.Item as='a' style={{ fontSize: '1.6rem' }}>How it works</List.Item>
+                            <List.Item as='a' style={{ fontSize: '1.6rem' }}>Courses</List.Item>
+                            <List.Item as='a' style={{ fontSize: '1.6rem' }}>Build Weeks</List.Item>
+                            <List.Item as='a' style={{ fontSize: '1.6rem' }}>Apply</List.Item>
                         </List>
                         </Grid.Column>
-                        <Grid.Column width={3}>
-                        <Header inverted as='h4' content='Services' />
-                        <List link inverted>
-                            <List.Item as='a'>Banana Pre-Order</List.Item>
-                            <List.Item as='a'>DNA FAQ</List.Item>
-                            <List.Item as='a'>How To Access</List.Item>
-                            <List.Item as='a'>Favorite X-Men</List.Item>
-                        </List>
-                        </Grid.Column>
-                        <Grid.Column width={7}>
-                        <Header as='h4' inverted>
-                            Footer Header
+                        <Grid.Column width={8}>
+                        <Header as='h4' inverted style={{ fontSize: '2.0rem' }}>
+                            Presented by Lambda School's Build Weeks
                         </Header>
-                        <p>
-                            Extra space for a call to action inside the footer that could help re-engage users.
+                        <p style={{ lineHeight: '1.5', fontSize: '1.6rem', padding: '0 1.0rem' }}>
+                            The Shots Fired App was the product of a "Build Weeks" collaboration.<br/> 
+                            To learn more about Build Weeks, click on the link to the left.
                         </p>
+                        </Grid.Column>                        
+                        <Grid.Column width={4}>
+                        <Header inverted as='h4' content='Contact Lambda School' style={{ fontSize: '2.0rem' }} />
+                        <List link inverted>
+                            <List.Item as='a' style={{ fontSize: '1.6rem' }}>Twitter</List.Item>
+                            <List.Item as='a' style={{ fontSize: '1.6rem' }}>GitHub</List.Item>
+                            <List.Item as='a' style={{ fontSize: '1.6rem' }}>Email</List.Item>
+                        </List>
                         </Grid.Column>
                     </Grid.Row>
                     </Grid>

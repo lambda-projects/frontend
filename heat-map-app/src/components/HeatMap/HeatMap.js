@@ -1,41 +1,46 @@
-import React, { Component } from 'react'
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import React from 'react';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 
 import '../../App.css';
 
 
-export default class HeatMap extends Component {
-  constructor(props) {
-  super(props);
-    this.state = {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13
-    }
-  }
+const HeatMap = (props) => {
+  console.log(props.minnData[0]);
+  const position = [props.lat, props.lng];
 
-  render() {
-    const position = this.props.latlng;
-    
     if (position) {
-      console.log(position, [this.props.lat, this.props.lng]);
+
       return (
-        <Map className="heatmap" center={position} zoom={this.state.zoom}>
-        <TileLayer
-          attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </Map> 
-    );
+        <Map className="heatmap" center={position} zoom={props.zoom}>
+          <TileLayer
+            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+
+          {props.minnData.map(incident => {
+              const position = [incident.latitude, incident.longitude];
+
+              return (
+                <Marker 
+                  key={incident.incident_id} 
+                  position={position} 
+                >
+                  <Popup>
+                    <h4>Date: {incident.date}</h4>
+                    <h4>Type: {incident.incident_type}</h4>            
+                    <h4>Number Killed: {incident.n_killed}</h4>
+                    <h4>Number Injured: {incident.n_injured}</h4>
+                  </Popup>
+                </Marker>
+              )
+          })};
+        </Map>
+      )
     } else {
       return (
-        <h1>Loading...</h1>
-      )
+        <h1 className="loading-text">Map is Loading...</h1>
+      );
     }
-  } 
-}
+};
+
+export default HeatMap;

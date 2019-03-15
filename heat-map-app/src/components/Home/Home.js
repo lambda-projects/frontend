@@ -35,7 +35,7 @@ const getWidth = () => {
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
 }
 
-const src1 = "https://cdn-images-1.medium.com/max/1200/0*a_4llBIWbEeO9ML5.png";
+const src1 = "https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/mass.png?raw=true";
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -80,7 +80,7 @@ const HomepageHeading = ({ mobile }) => (
       size="huge" 
       centered 
     />
-    <Button 
+    {/* <Button 
         primary size='huge'
         style={{
             marginTop: mobile ? '1.5em' : '1.0em',
@@ -89,7 +89,7 @@ const HomepageHeading = ({ mobile }) => (
     >
       Interactive Heat Maps
       <Icon name='right arrow' />
-    </Button>
+    </Button> */}
   </Container>
 )
 

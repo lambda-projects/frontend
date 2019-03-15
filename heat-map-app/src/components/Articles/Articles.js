@@ -10,7 +10,7 @@ const Articles = () => (
         <Card.Header>Top 20 States for Gun Violence Per Capita</Card.Header>
         <Card.Meta>Written by Daniel Harris</Card.Meta>
         <Card.Description>
-            <Image floated='right' size='medium' src='images/texas-killed.png' />
+            <Image floated='right' size='medium' src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/top20-bar.png?raw=true' />
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
@@ -26,7 +26,7 @@ const Articles = () => (
         <Card.Header>Mass shootings, by location</Card.Header>
         <Card.Meta>Written by Daniel Harris</Card.Meta>
         <Card.Description>
-            <Image floated='right' size='medium' src='/images/avatar/large/molly.png' />
+            <Image floated='right' size='medium' src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/mass.png?raw=true' />
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
@@ -42,7 +42,7 @@ const Articles = () => (
         <Card.Header>Why has Gun Violence Increased in Texas?</Card.Header>
         <Card.Meta>Written by Daniel Harris</Card.Meta>
         <Card.Description>
-            <Image floated='right' size='medium' src='/images/avatar/large/jenny.jpg' />
+            <Image floated='right' size='medium' src='https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/texas-killed.png?raw=true' />
         </Card.Description>
       </Card.Content>
       <Card.Content extra>

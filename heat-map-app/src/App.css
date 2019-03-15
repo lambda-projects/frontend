@@ -37,6 +37,11 @@ p {
 
 .articles-container {
   width: 100%;
-  padding-left: 325px;
-  padding-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }

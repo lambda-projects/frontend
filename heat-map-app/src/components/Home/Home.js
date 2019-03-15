@@ -18,11 +18,12 @@ import {
   Visibility,
 } from 'semantic-ui-react';
 
-import HeatMap from "../HeatMap/HeatMap";
 import App from "../App/App";
 // import App2 from "../App/App2";
 import Embed from "../Embed/Embed";
 import Embed2 from "../Embed/Embed2";
+import HeatMap from "../HeatMap/HeatMap";
+import Articles from "../Articles/Articles";
 
 import '../../App.css';
 
@@ -318,6 +319,25 @@ class Home extends Component {
                 </Segment>
                 <Segment style={{ padding: '0em' }} vertical>
                     <Grid celled='internally' columns='equal' stackable>
+                      <Grid.Column textAlign='center'>
+                              <Header 
+                                as='h3' 
+                                style={{ 
+                                  fontFamily: 'Playfair Display SC, serif', 
+                                  fontSize: '4em', 
+                                  color: 'white',
+                                }}
+                              >
+                                Articles on Gun Violence
+                              </Header>
+                      </Grid.Column>
+                      <Grid.Row textAlign='center' style={{ border: '5px solid red', marginLeft: 'auto', marginRight: 'auto' }}>
+                        <Articles />
+                      </Grid.Row>                      
+                    </Grid>
+                </Segment>
+                <Segment style={{ padding: '0em' }} vertical>
+                    <Grid celled='internally' columns='equal' stackable>
                         <Grid.Column textAlign='center'>
                             <Header 
                               as='h3' 
@@ -327,7 +347,7 @@ class Home extends Component {
                                 color: 'white',
                               }}
                             >
-                                Our Inspirations
+                              Resources & Inspirations
                             </Header>
                         </Grid.Column>
                         <Grid.Row textAlign='center'>

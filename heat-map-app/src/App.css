@@ -34,3 +34,9 @@ p {
 .loading-text {
   font-size: 3.0rem;
 }
+
+.articles-container {
+  width: 100%;
+  padding-left: 325px;
+  padding-right: auto;
+}

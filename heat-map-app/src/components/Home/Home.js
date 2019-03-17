@@ -276,6 +276,7 @@ class Home extends Component {
                 <Segment style={{ padding: '8em 0em' }} vertical>
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
+<<<<<<< HEAD
                       <Grid.Column width={16}>
                       <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '0' }}>
                           <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
@@ -313,6 +314,35 @@ class Home extends Component {
                           />                 
                         </Grid.Row>                         
                       </Grid.Column>
+||||||| merged common ancestors
+                    <Grid.Column width={16}>
+                        <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                          State-Level Heat Map Example for Minnesota
+                        </Header>
+                        <HeatMap 
+                          minnData={this.state.minnData}
+                          zoom={this.state.zoom}
+                          lat={this.state.lat}
+                          lng={this.state.lng}
+                        />
+                    </Grid.Column>
+=======
+                    <Grid.Column width={16}>
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <EmbedIframe />
+                        <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                          State-Level Heat Map Example for Minnesota
+                        </Header>
+                        <HeatMap 
+                          minnData={this.state.minnData}
+                          zoom={this.state.zoom}
+                          lat={this.state.lat}
+                          lng={this.state.lng}
+                        />
+                    </Grid.Column>
+>>>>>>> master
                     </Grid.Row>
                 </Grid>
                 </Segment>

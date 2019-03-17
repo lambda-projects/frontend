@@ -34,3 +34,14 @@ p {
 .loading-text {
   font-size: 3.0rem;
 }
+
+.articles-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-left: 10%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}

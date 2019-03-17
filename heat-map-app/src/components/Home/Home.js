@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
@@ -18,8 +17,12 @@ import {
   Visibility,
 } from 'semantic-ui-react';
 
+import App from "../App/App";
+import App2 from "../App/App2";
+import Embed from "../Embed/Embed";
+import Embed2 from "../Embed/Embed2";
 import HeatMap from "../HeatMap/HeatMap";
-import EmbedIframe from "../EmbedIframe/EmbedIframe";
+import Articles from "../Articles/Articles";
 
 import '../../App.css';
 
@@ -32,7 +35,7 @@ const getWidth = () => {
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
 }
 
-const src1 = "https://cdn-images-1.medium.com/max/1200/0*a_4llBIWbEeO9ML5.png";
+const src1 = "https://github.com/lambdabuildweek-gunviolenceheatmaps/frontend/blob/tico-thepsourinthone/heat-map-app/src/images/mass.png?raw=true";
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -72,8 +75,12 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? '0.0em' : '0.0em',
       }}
     />
-    <Image src={src1} size="huge" centered />
-    <Button 
+    <Image 
+      src={src1} 
+      size="huge" 
+      centered 
+    />
+    {/* <Button 
         primary size='huge'
         style={{
             marginTop: mobile ? '1.5em' : '1.0em',
@@ -82,7 +89,7 @@ const HomepageHeading = ({ mobile }) => (
     >
       Interactive Heat Maps
       <Icon name='right arrow' />
-    </Button>
+    </Button> */}
   </Container>
 )
 
@@ -269,6 +276,57 @@ class Home extends Component {
                 <Segment style={{ padding: '8em 0em' }} vertical>
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
+<<<<<<< HEAD
+                      <Grid.Column width={16}>
+                      <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '0' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
+                            Nationwide Gun Crime Per 10,000 People
+                          </Header>
+                          <App />                    
+                        </Grid.Row>
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
+                            Choropleth Map on U.S. Gun Violence 2013-2017
+                          </Header>
+                          <App2 />                 
+                        </Grid.Row>                   
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
+                            Gun Violence Across the U.S. in 2013
+                          </Header>
+                          <Embed />                    
+                        </Grid.Row>
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
+                            U.S. Gun Incidents Involving 3+ Victims for 2013-2017
+                          </Header>
+                          <Embed2 />                   
+                        </Grid.Row>                        
+                        <Grid.Row textAlign='center' style={{ padding: '0', marginTop: '100px' }}>
+                          <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '3.2em', color: 'white' }}>
+                            State-Wide Gun Incidents in Minnesota for 2013-2017
+                          </Header>
+                          <HeatMap 
+                            minnData={this.state.minnData}
+                            zoom={this.state.zoom}
+                            lat={this.state.lat}
+                            lng={this.state.lng}
+                          />                 
+                        </Grid.Row>                         
+                      </Grid.Column>
+||||||| merged common ancestors
+                    <Grid.Column width={16}>
+                        <Header as='h3' style={{ fontFamily: 'Playfair Display SC, serif', fontSize: '4em', color: 'white' }}>
+                          State-Level Heat Map Example for Minnesota
+                        </Header>
+                        <HeatMap 
+                          minnData={this.state.minnData}
+                          zoom={this.state.zoom}
+                          lat={this.state.lat}
+                          lng={this.state.lng}
+                        />
+                    </Grid.Column>
+=======
                     <Grid.Column width={16}>
                         <EmbedIframe />
                         <EmbedIframe />
@@ -284,8 +342,28 @@ class Home extends Component {
                           lng={this.state.lng}
                         />
                     </Grid.Column>
+>>>>>>> master
                     </Grid.Row>
                 </Grid>
+                </Segment>
+                <Segment style={{ padding: '0em' }} vertical>
+                    <Grid celled='internally' columns='equal' stackable>
+                      <Grid.Column textAlign='center'>
+                              <Header 
+                                as='h3' 
+                                style={{ 
+                                  fontFamily: 'Playfair Display SC, serif', 
+                                  fontSize: '4em', 
+                                  color: 'white',
+                                }}
+                              >
+                                Articles on Gun Violence
+                              </Header>
+                      </Grid.Column>
+                      <Grid.Row textAlign='center' style={{ width: '100%' }}>
+                        <Articles />
+                      </Grid.Row>                      
+                    </Grid>
                 </Segment>
                 <Segment style={{ padding: '0em' }} vertical>
                     <Grid celled='internally' columns='equal' stackable>
@@ -298,7 +376,7 @@ class Home extends Component {
                                 color: 'white',
                               }}
                             >
-                                Our Inspirations
+                              Resources & Inspirations
                             </Header>
                         </Grid.Column>
                         <Grid.Row textAlign='center'>
@@ -432,38 +510,7 @@ class Home extends Component {
                     </Grid>
                 </Segment>
                 <Segment style={{ padding: '8em 0em', borderTop: '1px solid white' }} vertical>
-                <Container text>
-                    <Header as='h3' style={{ fontSize: '2.5em', color: 'white' }}>
-                      More Data Visualizations
-                    </Header>
-                    <p style={{ fontSize: '1.33em' }}>
-                    Instead of focusing on content creation and hard work, we have learned how to master the
-                    art of doing nothing by providing massive amounts of whitespace and generic content that
-                    can seem massive, monolithic and worth your attention.
-                    </p>
-                    <Button as='a' size='large'>
-                    Read More
-                    </Button>
-                    <Divider
-                    as='h4'
-                    className='header'
-                    horizontal
-                    style={{ margin: '3em 0em', textTransform: 'uppercase' }}
-                    >
-                    <a href='https://www.lambdaschool.com'>Case Studies</a>
-                    </Divider>
-                    <Header as='h3' style={{ fontSize: '2em' }}>
-                    Did We Tell You About Our Bananas?
-                    </Header>
-                    <p style={{ fontSize: '1.33em' }}>
-                    Yes I know you probably disregarded the earlier boasts as non-sequitur filler content, but
-                    it's really true. It took years of gene splicing and combinatory DNA research, but our
-                    bananas can really dance.
-                    </p>
-                    <Button as='a' size='large'>
-                    I'm Still Quite Interested
-                    </Button>
-                </Container>
+                
                 </Segment>
                 <Segment inverted vertical style={{ padding: '5em 0em' }}>
                 <Container>
